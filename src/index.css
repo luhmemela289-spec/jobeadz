@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-cream: #FAF6F0;
+  --color-cream-dark: #EFE6D8;
+  --color-terracotta: #B84B2A;
+  --color-terracotta-dark: #983B1F;
+  --color-burgundy: #6E1E28;
+  --color-burgundy-dark: #4F131B;
+  --color-earth: #2A1A14;
+  --color-earth-muted: #5F4A40;
+  --color-gold: #C29438;
+  --color-gold-light: #DEC078;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-cream);
+    color: var(--color-earth);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.bead-pattern-bg {
+  background-image: radial-gradient(rgba(184, 75, 42, 0.08) 1.25px, transparent 1.25px),
+    radial-gradient(rgba(194, 148, 56, 0.09) 1.25px, transparent 1.25px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.bead-pattern-dark {
+  background-image: radial-gradient(rgba(222, 192, 120, 0.1) 1.25px, transparent 1.25px),
+    radial-gradient(rgba(184, 75, 42, 0.1) 1.25px, transparent 1.25px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
